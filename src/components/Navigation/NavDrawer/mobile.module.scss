@@ -1,0 +1,95 @@
+@import "variables.scss";
+$text-color: black;
+
+.drawerContainer {
+
+  color: rgb(0, 0, 0);
+  max-height: 95vh;
+  overflow-y: auto;
+  .secLink {
+    &:hover,
+    &:focus {
+      color: #CB9B1D;
+    }
+  }
+}
+.closeBar {
+  width: 100%;
+  min-width: 20rem;
+  background-color: #CB9B1D;
+  height: 5.3rem;
+  font-size: 1.7rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+  text-transform: uppercase;
+  p {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    transition: 0.4s;
+    cursor: pointer;
+    &:hover {
+      letter-spacing: 2px;
+    }
+  }
+  .icon {
+    margin: 0 0.4em;
+    font-size: 1.9rem;
+  }
+}
+
+.mainLink {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  min-width: max-content;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  min-width: 100%;
+  text-transform: capitalize;
+}
+.navMenu {
+  p{
+    font-size: 19px !important;
+    font-weight: 300;
+  }
+}
+.icondown {
+  font-size: 16px;
+  margin-left: 2em;
+}
+.secLink {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 1em 1em;
+  font-size: 1.4rem;
+  letter-spacing: 0;
+  color: $text-color;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 1280px) {
+  .mainLink {
+    font-size: 0.94rem;
+    padding: 1em 0em 1em 0em;
+  }
+  .secLink {
+    font-size: 0.75rem;
+    padding: 1em 0.5em;
+
+  }
+}

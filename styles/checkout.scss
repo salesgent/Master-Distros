@@ -1,0 +1,194 @@
+////////////checkout and cart fonts
+@font-face {
+  font-family: "karla-fonts";
+  src: url(../font/Karla/Karla-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "karla-fonts";
+  src: url(../font/Karla/Karla-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "karla-fonts";
+  src: url(../font/Karla/Karla-Medium.ttf) format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "karla-fonts";
+  src: url(../font/Karla/Karla-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "karla-fonts";
+  src: url(../font/Karla/Karla-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "karla-fonts";
+  src: url(../font/Karla/Karla-ExtraBold.ttf) format("truetype");
+  font-weight: 700;
+}
+/////////////////
+/* /////remove arrows from number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+// .checkout {
+//   background: #e9e8f4 !important;
+// }
+// .ejVceR {
+//   background: #e9e8f4 !important;
+// }
+// .hyYudx {
+//   background: #e9e8f4 !important;
+// }
+// .dETZtG {
+//   background: #181736 !important;
+//   color: #fff !important;
+// }
+// .jBSUQY {
+//   background: #181736 !important;
+// }
+// .cutgjS h5 span {
+//   color: #dda60a !important;
+// }
+// .bZfFke .circle {
+//   background: #dda60a !important;
+// }
+// .hyYudx span {
+//   color: #dda60a;
+// }
+// .lsNrU {
+//   background: #dda60a !important;
+// }
+// .gpmdSu .bold .red {
+//   color: #dda60a !important;
+// }
+// .lfzioz .red {
+//   color: #dda60a !important;
+// }
+// .ddPhLH.ddPhLH .red {
+//   color: #dda60a !important;
+// }
+// .bOOazR .bottom span {
+//   color: #dda60a !important;
+// }
+// .bOOazR .icon {
+//   color: #dda60a !important;
+// }
+// .dawpYG {
+//   background: #181736 !important;
+// }
+// .ddPhLH.ddPhLH {
+//   background: #e9e8f4 !important;
+// }
+// .bRSCDZ .checkout-btn {
+//   background: #181736 !important;
+//   border-color: #181736 !important;
+// }
+// .gWQbMK .checkout-btn {
+//   background: #181736 !important;
+//   border-color: #181736 !important;
+// }
+// .kCuYXd .checkout-btn {
+//   background: #181736 !important;
+//   border-color: #181736 !important;
+// }
+// .fBLBIg .primaryBgColor {
+//   background: #181736 !important;
+//   border-color: #181736 !important;
+// }
+// .dydoqY {
+//   border-color: #e9e8f4 !important;
+//   border-radius: 0px !important;
+// }
+// .bOOazR textarea {
+//   background: #e9e8f4 !important;
+//   border-color: #181736 !important;
+// }
+// .UtPdb:hover {
+//   background: #e9e8f4 !important;
+//   border-color: #e9e8f4 !important;
+// }
+// .SEzuP:hover {
+//   background: #e9e8f4 !important;
+//   border-color: #e9e8f4 !important;
+// }
+// .UtPdb .circle .fill {
+//   background: #dda60a !important;
+// }
+// .UtPdb .amount {
+//   color: #181736 !important;
+// }
+// .SEzuP .amount {
+//   color: #181736 !important;
+// }
+// ::-webkit-scrollbar-track {
+//   background: #e9e8f4 !important;
+// }
+// ::-webkit-scrollbar-thumb {
+//   background: #dda60a !important;
+// }
+// .jTNNvb {
+//   background: #dda60a !important;
+// }
+/* //////mui inputs */
+
+.checkout .MuiOutlinedInput-notchedOutline,
+.checkout .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: none !important;
+  outline: none !important;
+}
+/* ////checkbox */
+.checkout .Mui-checked {
+  color: black !important;
+}
+
+/* //////select inputs */
+// .checkout .MuiInputLabel-formControl,
+// .checkout .Mui-focused {
+//   color: grey !important;
+//   font-size: 0.875em;
+// }
+.checkout .MuiInputBase-root .checkout .MuiOutlinedInput-root,
+.checkout .MuiInputBase-colorPrimary,
+.checkout .MuiInputBase-fullWidth,
+.checkout .MuiInputBase-formControl,
+.checkout .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root {
+  background: #e9e8f4;
+  border-radius: 10px;
+}
+.checkout
+  .css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.MuiSelect-select {
+  height: 28px;
+}
+// /* /////stepper length */
+.checkout .MuiStepConnector-line,
+.MuiStepConnector-lineVertical,
+.css-vgb7rt {
+  min-height: 60px !important;
+}
+.checkout .css-vnkopk-MuiStepLabel-iconContainer {
+  padding: 0 !important;
+}
+
+@media only screen and (max-width: 640px) {
+  .checkout .MuiStepConnector-line,
+  .MuiStepConnector-lineVertical,
+  .css-vgb7rt {
+    min-height: 40px !important;
+  }
+}
+
+.checkout .css-vnkopk-MuiStepLabel-iconContainer {
+  padding: 0 !important;
+}
