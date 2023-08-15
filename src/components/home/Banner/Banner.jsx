@@ -65,7 +65,7 @@ const Banner = ({ bannerAfterSecondary }) => {
             >
               <Link href={v?.redirectPath || ""} passHref>
                 <img
-                  src={v?.imageUrl && v?.imageUrl !== "null" ? v?.imageUrl : "/images/products/ABC-Logo.png"}
+                  src={v?.imageUrl && v?.imageUrl !== "null" ? v?.imageUrl : "/images/products/logo.png"}
                   alt="image"
                   style={{ width: "100%", height: "auto", cursor: "pointer" }}
                 />

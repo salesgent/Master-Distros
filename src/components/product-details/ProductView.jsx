@@ -74,7 +74,7 @@ const ProductViewContainer = ({ productDetails, loading, id }) => {
   let images =
     product?.productImageList && product?.productImageList.length > 0
       ? product?.productImageList
-      : ["/images/products/ABC-Logo.png"];
+      : ["/images/products/logo.png"];
 
   // //short description
   // const shortDescription = () => {

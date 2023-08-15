@@ -8,7 +8,7 @@ const AgeRestriction = ({ show, setShow }) => {
     <div className={styles.container}>
       <div className={styles.modal}>
         <Image
-          src="/images/header/ABC-Logo.jpeg"
+          src="/images/header/logo-full.png"
           alt="img"
           width={280}
           height={74}

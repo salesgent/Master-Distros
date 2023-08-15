@@ -134,27 +134,27 @@ export const links4 = [
 ];
 
 export const links5 = [
-{
-  url:'/',
-  alias:'Age Verification '
-},
-{
-  url:'/',
-  alias:'ABC Compliance'
-},
-{
-  url:'/',
-  alias:'Product Warranty'
-},
-{
-  url:'/',
-  alias:'Terms and Conditions'
-},
-{
-  url:'/',
-  alias:'Privacy Policy'
-},
-]
+  {
+    url: "/",
+    alias: "Age Verification ",
+  },
+  {
+    url: "/",
+    alias: "Compliance",
+  },
+  {
+    url: "/",
+    alias: "Product Warranty",
+  },
+  {
+    url: "/",
+    alias: "Terms and Conditions",
+  },
+  {
+    url: "/",
+    alias: "Privacy Policy",
+  },
+];
 
 export const socialLinks = [
   {

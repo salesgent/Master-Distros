@@ -145,7 +145,7 @@ const ProductsPage = () => {
   return (
     <>
       <Head>
-        <title>ABC WHOLESALE</title>
+        <title>Master Distro</title>
       </Head>
       <ProductsSection>
         <RouteBar />

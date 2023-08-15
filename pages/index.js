@@ -23,7 +23,7 @@ export default function Home({ primarySlider, secondarySlider, bannerAfterSecond
   return (
     <div>
       <Head>
-        <title>ABC WHOLESALE</title>
+        <title>Master Distro</title>
       </Head>
       <main>
         <LandingCarousel data={primarySlider} />

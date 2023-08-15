@@ -48,10 +48,10 @@ const ProductsLoader = ({ number }) => {
         <ProductCardSkeleton background={product.bgImage} key={i}>
           <ImageBox>
             <Image
-              src={product.imageUrl || "/images/products/ABC-Logo.png"}
+              src={product.imageUrl || "/images/products/logo.png"}
               alt={product.productName}
               layout="fill"
-              blurDataURL="/images/products/ABC-Logo.png"
+              blurDataURL="/images/products/logo.png"
               placeholder="blur"
             />
           </ImageBox>

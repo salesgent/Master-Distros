@@ -42,7 +42,7 @@ export const productsData = [
     standardPriceWithoutDiscount: 54.99343,
   },
   {
-    imageUrl: "/images/products/ABC-Logo.png",
+    imageUrl: "/images/products/logo.png",
     productName: "Mya Silver Hookah",
     title: "Mya bambino gold social",
     standardPrice: 50.993939,
@@ -63,7 +63,7 @@ export const productsData = [
     standardPriceWithoutDiscount: 54.99343,
   },
   {
-    imageUrl: "/images/products/ABC-Logo.png",
+    imageUrl: "/images/products/logo.png",
     productName: "Mya Silver Hookah gummies",
     title: "Mya bambino gold social",
     standardPrice: 50.993939,
@@ -84,7 +84,7 @@ export const productsData = [
     standardPriceWithoutDiscount: 54.99343,
   },
   {
-    imageUrl: "/images/products/ABC-Logo.png",
+    imageUrl: "/images/products/logo.png",
     productName: "Mya Silver Hookah",
     title: "Mya bambino gold social",
     standardPrice: 50.993939,

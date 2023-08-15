@@ -100,7 +100,7 @@ const Header = () => {
         </HeaderNav>
         <LogoContainer>
           <Link href="/">
-            <Image src="/images/header/ABC-Logo.jpeg" alt="logo" layout="responsive" width={280} height={74} />
+            <Image src="/images/header/logo-full.png" alt="logo" layout="responsive" width={280} height={74} />
           </Link>
         </LogoContainer>
         <Stack

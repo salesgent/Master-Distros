@@ -24,7 +24,7 @@ const SearchDropDown = ({ searchData }) => {
               }}
             >
               <div className={styles.card} onClick={() => console.log("clicked product")}>
-                <img src={li?.imageUrl === "null" ? "/images/products/ABC-Logo.png" : li?.imageUrl} alt="product" />
+                <img src={li?.imageUrl === "null" ? "/images/products/logo.png" : li?.imageUrl} alt="product" />
                 <h2>
                   {li?.productName} <span>$ {li?.standardPrice}</span>
                 </h2>

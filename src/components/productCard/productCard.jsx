@@ -56,12 +56,12 @@ const CommonProductCard = ({ product, onListPage, isNew }) => {
         <ProductCard isWhiteBg={isNew} className="product-card" onListPage={onListPage}>
           <ImageBox small={onListPage}>
             <Image
-              src={product.imageUrl && product.imageUrl !== "null" ? product.imageUrl : "/images/products/ABC-Logo.png"}
+              src={product.imageUrl && product.imageUrl !== "null" ? product.imageUrl : "/images/products/logo.png"}
               alt={product.productName}
               layout="intrinsic"
               placeholder="blur"
               blurDataURL={
-                product.imageUrl && product.imageUrl !== "null" ? product.imageUrl : "/images/products/ABC-Logo.png"
+                product.imageUrl && product.imageUrl !== "null" ? product.imageUrl : "/images/products/logo.png"
               }
               width={210}
               height={210}

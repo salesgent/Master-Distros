@@ -102,18 +102,9 @@ const Footer = () => {
           >
             <h6>Address</h6>
             <FooterCol>
-            <FooterLink url="/">
-              11111 Harry Hines Blvd
-              </FooterLink>
-              <FooterLink url="/">
-              
-                {" "}
-                Dallas, TX 75229, United States
-              
-              </FooterLink>
-              <FooterLink url="/">
-              Call us at +1 469-372-0054
-              </FooterLink>
+              <FooterLink url="/">11111 Harry Hines Blvd</FooterLink>
+              <FooterLink url="/"> Dallas, TX 75229, United States</FooterLink>
+              <FooterLink url="/">Call us at +1 469-372-0054</FooterLink>
             </FooterCol>
           </FooterLinksBox>
         </FooterLinksContainer>
@@ -135,7 +126,9 @@ const Footer = () => {
               <AiOutlineTwitter className="icon" />
             </Link>
           </IconsBox>
-          <Typography variant="h6" style={{fontSize:'21px',color:'#fff'}}>© 2022 ABC Wholesale.</Typography>
+          <Typography variant="h6" style={{ fontSize: "21px", color: "#fff" }}>
+            © {new Date()?.getFullYear()} Master Distro.
+          </Typography>
         </FooterBottom>
       </FooterContainer>
     </FooterSection>

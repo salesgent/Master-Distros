@@ -36,11 +36,7 @@ const ProductImgCarousel = ({ images, loading }) => {
             {images.map((image, i) => (
               <div key={i} style={{ height: "100%" }}>
                 <img
-                  src={
-                    image && image !== "null"
-                      ? image
-                      : "/images/products/ABC-Logo.png"
-                  }
+                  src={image && image !== "null" ? image : "/images/products/logo.png"}
                   alt="image not found"
                   className={styles.slide}
                   width={100}

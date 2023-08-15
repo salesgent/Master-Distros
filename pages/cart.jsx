@@ -133,7 +133,7 @@ const CartDrawerStack = () => {
         }}
         retail={false}
         handleIncrementDecrement={(type, product) => updateCart(type, product)}
-        imgnotfoundUrl="/images/products/ABC-Logo.png"
+        imgnotfoundUrl="/images/products/logo.png"
         clickRedirect={(link) => router.push(link)}
       />
     </Container>

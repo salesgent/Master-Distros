@@ -72,7 +72,7 @@ const CartDrawerStack = () => {
           deleteProductFromCart([product], token)(dispatch);
         }}
         handleIncrementDecrement={(type, product) => updateCart(type, product)}
-        imgnotfoundUrl="/images/products/ABC-Logo.png"
+        imgnotfoundUrl="/images/products/logo.png"
         handleRedirect={(link) => handleRedirect(link)}
       />
     </CartDrawerStyle>
