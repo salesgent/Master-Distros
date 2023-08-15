@@ -17,7 +17,11 @@ const nextConfig = {
   },
   images: {
     domains: [
-      "dzdl2z6968bgj.cloudfront.net"],
+      "d3j5xyin142jiv.cloudfront.net",
+      "d1lcbafy93xv06.cloudfront.net",
+      "dnfbqhh6e48qy.cloudfront.net",
+      "d2qy7jf8q4hhsv.cloudfront.net",
+    ],
     experimental: {
       scrollRestoration: true,
     },
