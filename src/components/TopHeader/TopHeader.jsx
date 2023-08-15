@@ -83,7 +83,7 @@ const headerData1 = [
   {
     icon: <BsTelephone className="icon" />,
     link: "#",
-    name: " +1 469-372-0054",
+    name: " +1 000-000-0000",
   },
   {
     icon: <RiFileList3Line className="icon" />,
@@ -104,13 +104,13 @@ const headerData = [
   },
   {
     icon: <BsTelephone className="icon" />,
-    link: "#",
-    name: " +1 469-372-0054",
+    link: "tel:+10000000000",
+    name: " +1 000-000-0000",
   },
   {
     icon: <RiFileList3Line className="icon" />,
-    link: "/account/login",
-    name: "Recently Viewed",
+    link: "mailto:cs@masterdistros.com",
+    name: "cs@masterdistros.com",
   },
 ];
 

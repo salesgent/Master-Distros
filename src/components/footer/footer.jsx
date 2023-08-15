@@ -102,9 +102,10 @@ const Footer = () => {
           >
             <h6>Address</h6>
             <FooterCol>
-              <FooterLink url="/">11111 Harry Hines Blvd</FooterLink>
-              <FooterLink url="/"> Dallas, TX 75229, United States</FooterLink>
-              <FooterLink url="/">Call us at +1 469-372-0054</FooterLink>
+              <FooterLink url="/">address1</FooterLink>
+              <FooterLink url="/"> address2</FooterLink>
+              <FooterLink url="tel:+10000000000">Call us at +1 000-000-0000</FooterLink>
+              <FooterLink url="mailto:cs@masterdistros.com">Email us at cs@masterdistros.com</FooterLink>
             </FooterCol>
           </FooterLinksBox>
         </FooterLinksContainer>
