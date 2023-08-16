@@ -438,7 +438,7 @@ const RegisterPage = () => {
                     render={({ field }) => <input type="checkbox" {...field} required />}
                   />
                   <Typography>
-                    I have read and agree to Master Distro <span>Terms of Use </span> & <span>Privacy Policy.</span>
+                    I have read and agree to Master Distros <span>Terms of Use </span> & <span>Privacy Policy.</span>
                   </Typography>
                 </div>
               </Grid>

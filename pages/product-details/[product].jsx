@@ -36,7 +36,7 @@ const ProductsDetailsPage = ({}) => {
   return (
     <>
       <Head>
-        <title>Master Distro</title>
+        <title>Master Distros</title>
       </Head>
       <ProductDetailsSection>
         <RouteBar name={product?.masterProductDetails?.productName} />

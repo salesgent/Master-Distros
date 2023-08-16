@@ -5,7 +5,7 @@ import React from "react";
 const CommonHead = () => {
   return (
     <Head>
-      <title>Master Distro</title>
+      <title>Master Distros</title>
       <meta name="description" content="leaf distro" />
       <link rel="manifest" href="/favicon/manifest.json" />
       {/* favicons */}

@@ -128,7 +128,7 @@ const Footer = () => {
             </Link>
           </IconsBox>
           <Typography variant="h6" style={{ fontSize: "21px", color: "#fff" }}>
-            © {new Date()?.getFullYear()} Master Distro.
+            © {new Date()?.getFullYear()} Master Distros.
           </Typography>
         </FooterBottom>
       </FooterContainer>

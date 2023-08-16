@@ -23,7 +23,7 @@ export default function Home({ primarySlider, secondarySlider, bannerAfterSecond
   return (
     <div>
       <Head>
-        <title>Master Distro</title>
+        <title>Master Distros</title>
       </Head>
       <main>
         <LandingCarousel data={primarySlider} />

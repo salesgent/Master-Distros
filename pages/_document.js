@@ -66,7 +66,7 @@ export default class Document extends NextDocument {
 
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
-          <title>Master Distro</title>
+          <title>Master Distros</title>
         </Head>
         <body>
           <Main />
