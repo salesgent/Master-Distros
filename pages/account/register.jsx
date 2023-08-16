@@ -43,8 +43,8 @@ const RegisterPage = () => {
     if (phoneNumber[0].length < 8) {
       setShowError(true);
     } else {
-      if (businessLicense.length < 1 || tobaccoLicense.length < 1 || drivingLicense.length < 1)
-        return setAlert("warn", "Please Upload All The  Documents to continue")(dispatch);
+      // if (businessLicense.length < 1 || tobaccoLicense.length < 1 || drivingLicense.length < 1)
+      // return setAlert("warn", "Please Upload All The  Documents to continue")(dispatch);
       if (!markedCapcha) return setAlert("warn", "Please Mark the captcha to continue")(dispatch);
       register({
         ...data,
@@ -361,7 +361,7 @@ const RegisterPage = () => {
                   name="taxId"
                   render={({ field }) => (
                     <TextField
-                      required={true}
+                      // required={true}
                       label="Business License Number"
                       {...field}
                       className={styles.inputBox}
@@ -383,7 +383,7 @@ const RegisterPage = () => {
                   name="tobaccoId"
                   render={({ field }) => (
                     <TextField
-                      required={true}
+                      // required={true}
                       label="OTP/Vape/Tobacco License Number"
                       {...field}
                       className={styles.inputBox}
@@ -405,7 +405,7 @@ const RegisterPage = () => {
                   name="drivingLicenseNumber"
                   render={({ field }) => (
                     <TextField
-                      required={true}
+                      // required={true}
                       label="Driving License Number"
                       {...field}
                       className={styles.inputBox}

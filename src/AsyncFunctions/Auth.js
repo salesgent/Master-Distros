@@ -137,9 +137,9 @@ export const register = (details) => async (dispatch) => {
   };
 
   let bodyFormData = new FormData();
-  bodyFormData.append("businessLicense", businessLicense[0], businessLicense[0]?.name);
-  bodyFormData.append("tobaccoLicense", tobaccoLicense[0], tobaccoLicense[0]?.name);
-  bodyFormData.append("drivingLicense", drivingLicense[0], drivingLicense[0]?.name);
+  businessLicense?.[0] && bodyFormData.append("businessLicense", businessLicense?.[0], businessLicense?.[0]?.name);
+  tobaccoLicense?.[0] && bodyFormData.append("tobaccoLicense", tobaccoLicense?.[0], tobaccoLicense?.[0]?.name);
+  drivingLicense?.[0] && bodyFormData.append("drivingLicense", drivingLicense?.[0], drivingLicense?.[0]?.name);
   bodyFormData.append("customerObj", JSON.stringify(userDetails));
 
   try {

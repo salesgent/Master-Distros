@@ -14,6 +14,7 @@ const AgeRestriction = ({ show, setShow }) => {
           height={74}
           layout="fixed"
           className={styles.img}
+          objectFit="contain"
         />
         <h1>Are You over 21?</h1>
         <div className={styles.btnContainer}>
