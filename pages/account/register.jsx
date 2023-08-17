@@ -6,8 +6,6 @@ import Router from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
 ////////////////////////////////////////////////////////////////////////
 import getConfig from "next/config";
-const { publicRuntimeConfig } = getConfig();
-const { GOOGLE_RECAPTCHA_KEY } = publicRuntimeConfig;
 import styles from "../../src/components/loginAndRegister/register.module.scss";
 import { register } from "../../src/AsyncFunctions/Auth";
 import { H1 } from "../../src/utilities/theme/components";
@@ -17,6 +15,8 @@ import DropFiles from "../../src/components/loginAndRegister/DropFiles/DropFiles
 import ShowDropFiles from "../../src/components/loginAndRegister/DropFiles/ShowDropFiles";
 
 const RegisterPage = () => {
+  const { publicRuntimeConfig } = getConfig();
+  const { GOOGLE_RECAPTCHA_KEY } = publicRuntimeConfig;
   const { control, handleSubmit, watch } = useForm();
   const [showError, setShowError] = useState(false);
   const [markedCapcha, setMarkedCapcha] = useState(false);
