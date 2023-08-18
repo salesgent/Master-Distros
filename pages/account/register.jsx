@@ -443,10 +443,7 @@ const RegisterPage = () => {
                 </div>
               </Grid>
               <Grid item xs={11} md={11}>
-                <ReCAPTCHA
-                  sitekey={GOOGLE_RECAPTCHA_KEY || "6Lcl6iYjAAAAAPasPAWZqxiRxBg1kyr5Ni4IbLLE"}
-                  onChange={onChangeRecapcha}
-                />
+                <ReCAPTCHA sitekey={"6LdE5bMnAAAAACFQ39AZqQ94CZKQ-klHEJY1EGXU"} onChange={onChangeRecapcha} />
               </Grid>
 
               <Grid item xs={11} md={5.5}>

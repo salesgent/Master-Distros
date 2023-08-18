@@ -104,8 +104,8 @@ const headerData = [
   },
   {
     icon: <BsTelephone className="icon" />,
-    link: "tel:+10000000000",
-    name: " +1 000-000-0000",
+    link: "tel:+4044910786",
+    name: " +1 404-491-0786",
   },
   {
     icon: <RiFileList3Line className="icon" />,

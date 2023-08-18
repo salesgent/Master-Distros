@@ -51,10 +51,9 @@ export const FooterLinksBox = styled.div`
 
   h6 {
     text-transform: capitalize;
-    font-size: 25px;
+    font-size: 1.6rem;
     font-weight: 700;
     font-family: "Gothic A1";
-    height: 3.5rem;
     // border-bottom: 3px solid;
     // border-color: ${(props) => props.theme.palette.bg.main};
     color: white;
@@ -62,14 +61,15 @@ export const FooterLinksBox = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     margin-bottom: 0.6em;
+    padding-bottom: 0.6em;
     padding-right: 1.5em;
     /* min-width: 100%; */
     position: relative;
     &::after {
       content: "";
       height: 3px;
-      width: 115px;
-      background-color: #DDA60A;
+      width: 7rem;
+      background-color: #dda60a;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -77,10 +77,9 @@ export const FooterLinksBox = styled.div`
   }
   @media screen and (max-width: 768px) {
     h6 {
-      font-size: 2.6rem;
-      height: 3.8rem;
+      font-size: 2rem;
     }
-    margin-bottom: 2.5em;
+    margin-bottom: 2rem;
     width: 95%;
   }
 `;

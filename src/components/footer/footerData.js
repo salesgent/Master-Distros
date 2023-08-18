@@ -1,32 +1,28 @@
 export const links1 = [
   {
     url: "/",
-    alias: "Help Portal",
+    alias: "Contact Us",
   },
   {
     url: "/",
-    alias: " Contact Us",
+    alias: "About Us",
   },
   {
     url: "/",
-    alias: " Delivery Information",
+    alias: "Privacy Policy",
   },
   {
     url: "/",
-    alias: " Click and Collect",
+    alias: "Terms & Condition",
   },
   {
     url: "/",
-    alias: " Refunds and Returns",
+    alias: "Shipping Policy",
   },
   {
     url: "/",
-    alias: " Rewards",
+    alias: "Return Policy",
   },
-  {
-    url: "/",
-    alias: "Price Match",
-  }
 ];
 
 export const links2 = [
@@ -71,10 +67,6 @@ export const links2 = [
 export const links3 = [
   {
     url: "/",
-    alias: "About Us",
-  },
-  {
-    url: "/",
     alias: "Store Locator",
   },
   {
@@ -92,7 +84,7 @@ export const links3 = [
   {
     url: "/",
     alias: "Promote with Us",
-  }
+  },
 ];
 export const links4 = [
   {
