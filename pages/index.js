@@ -13,6 +13,7 @@ import Features from "../src/components/home/Features/Features";
 import LandingCarousel from "../src/components/home/ladingCarousel/landingCarousel";
 import VapeCategory from "../src/components/home/productCategory/VapeCategory";
 import axios from "axios";
+import Customers from "../src/components/home/customers/Customers";
 
 const Tags = dynamic(() => import("../src/components/home/TagsProducts/productsSlider/Tags"));
 const Newsteller = dynamic(() => import("../src/components/home/Newsteller/Newsteller"), { ssr: false });
@@ -32,6 +33,7 @@ export default function Home({ primarySlider, secondarySlider, bannerAfterSecond
         {/* <LandingGallery secondarySlider={secondarySlider} /> */}
         {/* <VapeCategory /> */}
         <Tags bannerAfterSecondary={bannerAfterSecondary} />
+        <Customers />
         <Newsteller />
       </main>
     </div>
