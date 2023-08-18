@@ -87,9 +87,6 @@ const data = {
           <p>
             Mater Distros USA LLC
             <br />
-            4662 N Royal Atlanta Dr
-            <br />
-            Tucker, GA 30084 <br />
             <Link href={"mailto:cs@masterdistros.coms"} style={{ color: "#DDA60A" }}>
               cs@masterdistros.coms
             </Link>
