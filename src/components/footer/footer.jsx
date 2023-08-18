@@ -19,6 +19,17 @@ import {
 import { links1, links2, links3, links4 } from "./footerData";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import styled from "styled-components";
+
+const ImgBox = styled(Box)({
+  position: "relative",
+  height: "15rem",
+  width: "20rem",
+  transition: "all 0.5s",
+  "&:hover ": {
+    transform: " scale(1.05)",
+  },
+});
 
 const Footer = () => {
   const [email, setemail] = useState("");
@@ -31,7 +42,26 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
           >
-            <h6>Navigate</h6>
+            <Link href="/">
+              <ImgBox>
+                <Image
+                  src={
+                    // logoUrl ||
+                    "/images/header/logo-full.png"
+                  }
+                  alt="logo"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </ImgBox>
+            </Link>
+          </FooterLinksBox>
+          <FooterLinksBox
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
+          >
+            <h6>Info</h6>
             <FooterLinksCol>
               <FooterCol>
                 {links1.map((link, i) => (
@@ -58,7 +88,7 @@ const Footer = () => {
               </FooterCol>
             </FooterLinksCol>
           </FooterLinksBox> */}
-          <FooterLinksBox
+          {/* <FooterLinksBox
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
@@ -73,7 +103,7 @@ const Footer = () => {
                 ))}
               </FooterCol>
             </FooterLinksCol>
-          </FooterLinksBox>
+          </FooterLinksBox> */}
           {/* <FooterLinksBox
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}

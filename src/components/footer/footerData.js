@@ -1,27 +1,23 @@
 export const links1 = [
   {
-    url: "/",
+    url: "/contact-us",
     alias: "Contact Us",
   },
   {
-    url: "/",
+    url: "/about-us",
     alias: "About Us",
   },
   {
-    url: "/",
+    url: "/privacy-policy",
     alias: "Privacy Policy",
   },
   {
-    url: "/",
+    url: "/terms-condition",
     alias: "Terms & Condition",
   },
   {
-    url: "/",
+    url: "/shipping-policy",
     alias: "Shipping Policy",
-  },
-  {
-    url: "/",
-    alias: "Return Policy",
   },
 ];
 
