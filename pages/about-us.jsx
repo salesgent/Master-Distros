@@ -64,7 +64,7 @@ const Component = (props) => {
   return (
     <Container>
       <StaticPage data={data} colors={{ primaryColor: "#DDA60A" }} />
-      <Customers />
+      {/* <Customers /> */}
     </Container>
   );
 };
