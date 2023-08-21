@@ -43,6 +43,7 @@ export const NavHeader = styled.div`
   font-size: 1.88rem;
   height: 181px;
   // background: url("/images/home/banner/banner-3.png");
+  background: ${(props) => props.theme.palette.colors.main}20;
   bacground-position: center;
   background-repeat: no-repeat;
   background-size: cover;
