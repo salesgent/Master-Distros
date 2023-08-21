@@ -42,7 +42,7 @@ export const NavHeader = styled.div`
   justify-content: center;
   font-size: 1.88rem;
   height: 181px;
-  background: url("/images/home/banner/banner-3.png");
+  // background: url("/images/home/banner/banner-3.png");
   bacground-position: center;
   background-repeat: no-repeat;
   background-size: cover;
