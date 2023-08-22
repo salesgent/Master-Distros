@@ -123,7 +123,7 @@ const LinkText = styled(FooterText)`
   font-family: "Gothic A1";
   margin: 0.3em 0;
   &:hover {
-    color: #DDA60A;
+    color: #dda60a;
   }
   @media screen and (max-width: 768px) {
     margin: 0.3rem 0;
@@ -133,7 +133,7 @@ const LinkText = styled(FooterText)`
 export const FooterLink = ({ children, url, fontWeight }, ...rest) => {
   if (url) {
     return (
-      <Link href={url}>
+      <Link href={url} target="_blank">
         <LinkText {...rest} fontWeight={fontWeight}>
           {children}
         </LinkText>
@@ -141,7 +141,7 @@ export const FooterLink = ({ children, url, fontWeight }, ...rest) => {
     );
   } else {
     return (
-      <LinkText {...rest} fontWeight={fontWeight}>
+      <LinkText {...rest} target="_blank" fontWeight={fontWeight}>
         {children}
       </LinkText>
     );
@@ -149,23 +149,23 @@ export const FooterLink = ({ children, url, fontWeight }, ...rest) => {
 };
 
 export const IconsBox = styled.div`
-width: 100%;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-flex-wrap: wrap;
-margin-top: 1.2rem;
-color: white;
-font-size: 2.2rem;
-max-width:200px;
-.icon {
-  cursor: pointer;
-  transition: all 0.4s;
-  &:hover {
-    transform: scale(1.3);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+  color: white;
+  font-size: 2.2rem;
+  max-width: 200px;
+  .icon {
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover {
+      transform: scale(1.3);
+    }
   }
-}
 `;
 
 export const FooterBottom = styled.div`

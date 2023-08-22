@@ -8,6 +8,10 @@ export const links1 = [
     alias: "About Us",
   },
   {
+    url: "https://form.jotform.com/232335895689171",
+    alias: "Credit authorization",
+  },
+  {
     url: "/privacy-policy",
     alias: "Privacy Policy",
   },
