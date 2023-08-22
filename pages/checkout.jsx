@@ -52,9 +52,14 @@ const CheckoutPage = () => {
   const selectedStore = useSelector((state) => state.checkout.SelectedStore);
   const showShipping = useSelector((state) => state.checkout.showShipping);
   const storeCr = useSelector((state) => state.checkout.storeCredits);
+  const discountCoupons = useSelector((state) => state.checkout?.discountCoupons);
   const mounted = useRef(false);
   const taxPercentage = 0;
   const storePayment = storeCr ? { name: "store credits" } : null;
+  let discountTotal = 0;
+  // discountCoupons?.forEach((element) => {
+  //   discountTotal = discountTotal + element.amount;
+  // });
   useEffect(() => {
     if (tokens?.token && !mounted.current) {
       fetchPaymentOptions(dispatch, tokens?.token).then((data) => {
@@ -162,21 +167,24 @@ const CheckoutPage = () => {
         countryId: card?.countryId,
       };
     }
-    if (storeCr && storeCr?.amount > cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0)) {
+    if (storeCr && storeCr?.amount > cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0) - discountTotal) {
       orderPaymentList = [
         {
           amount: cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0) - discountTotal,
           paymentModeId: storeCr?.id,
         },
       ];
-    } else if (storeCr && storeCr?.amount < cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0)) {
+    } else if (
+      storeCr &&
+      storeCr?.amount < cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0) - discountTotal
+    ) {
       orderPaymentList = [
         {
           amount: storeCr?.amount,
           paymentModeId: storeCr?.id,
         },
         {
-          amount: cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0) - storeCr?.amount,
+          amount: cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0) - storeCr?.amount - discountTotal,
           paymentModeId: selectedPayment?.id,
         },
       ];
@@ -196,23 +204,25 @@ const CheckoutPage = () => {
         orderDto,
         paymentDtoList,
         ecommerceCustomPaymentDto,
+        // discountCouponList: discountCoupons,
       })(dispatch).then((data) => {
-        if (data.productOutOfStock) {
+        if (data?.productOutOfStock) {
           setAlert("error", "There are few line items out of stock, please review them once.")(dispatch);
           router.push(`/cart`);
         }
-        if (data.orderDto.id) router.push(`/thankyou/${data.orderDto.id}`);
+        if (data?.orderDto?.id) router.push(`/thankyou/${data?.orderDto?.id}`);
       });
     } else {
       PostOrder(tokens?.token, {
         orderDto,
         paymentDtoList,
+        // discountCouponList: discountCoupons,
       })(dispatch).then((data) => {
-        if (data.productOutOfStock) {
+        if (data?.productOutOfStock) {
           setAlert("error", "There are few line items out of stock, please review them once.")(dispatch);
           router.push(`/cart`);
         }
-        if (data.orderDto.id) router.push(`/thankyou/${data.orderDto.id}`);
+        if (data?.orderDto?.id) router.push(`/thankyou/${data?.orderDto?.id}`);
       });
     }
     setOrderLoading(false);
