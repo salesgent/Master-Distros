@@ -76,6 +76,18 @@ const Header = () => {
             </Drawer>
           )}
         </SmIcons>
+        <LogoContainer>
+          <Link href="/">
+            <Image
+              src="/images/header/logo-full.png"
+              alt="logo"
+              layout="responsive"
+              width={280}
+              height={74}
+              objectFit="contain"
+            />
+          </Link>
+        </LogoContainer>
         <HeaderNav className="noBelowLg">
           <SearchHeader />
           {/* <Stack
@@ -98,18 +110,6 @@ const Header = () => {
             ))}
           </Stack> */}
         </HeaderNav>
-        <LogoContainer>
-          <Link href="/">
-            <Image
-              src="/images/header/logo-full.png"
-              alt="logo"
-              layout="responsive"
-              width={280}
-              height={74}
-              objectFit="contain"
-            />
-          </Link>
-        </LogoContainer>
         <Stack
           spacing={1}
           direction="row"

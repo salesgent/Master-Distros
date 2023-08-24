@@ -71,8 +71,8 @@ export const LogoContainer = styled.div`
   width: 15rem;
   cursor: pointer;
   position: relative;
-  margin-right: auto;
-  margin-left: auto;
+  // margin-right: auto;
+  // margin-left: auto;
   @media screen and (max-width: 1400px) {
     margin: 0 auto;
   }
@@ -231,6 +231,7 @@ export const HeaderNav = styled.div`
   height: 100%;
   max-width: 41rem;
   width: 100%;
+  margin: auto;
 `;
 
 export const HeaderLink = styled.a`
