@@ -41,18 +41,17 @@ export const NavHeader = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1.88rem;
-  height: 181px;
+  min-height: 181px;
   // background: url("/images/home/banner/banner-3.png");
-  background: ${(props) => props.theme.palette.colors.main}20;
-  bacground-position: center;
+  background: ${(props) => props.theme.palette.bg.main}20;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
   max-width: 100vw;
   text-overflow: ellipsis;
   h4 {
-    font-size: 32px;
-    line-height: 2.5rem;
+    font-size: 2rem;
     max-width: 50%;
     color: #181736;
     font-weight: 700;
@@ -63,12 +62,11 @@ export const NavHeader = styled.div`
   }
 `;
 export const ProductButton = styled(motion.button)`
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 900;
-  height:42px;
   text-transform: capitalize;
-  padding: 0 1.4em;
-  background-color: #DDA60A;
+  padding: 1rem 0.8rem;
+  background-color: #dda60a;
   border-radius: 1.56rem;
   border: none;
   cursor: pointer;

@@ -133,20 +133,14 @@ export const ProductContent = styled.div`
 `;
 
 export const ProductName = styled.h4`
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 600;
   text-align: center;
   color: #181736;
-  line-height: 25px;
   max-height: 4rem;
-  height: 3.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
-  @media only screen and (max-width: 768px) {
-    max-height: 4.4rem;
-    height: 4.5rem;
-  }
 `;
 
 export const ProductPrice = styled.div`
