@@ -72,25 +72,14 @@ export const ProductDetailsBox = styled.div`
   }
 `;
 export const ProductDetailedName = styled.h3`
-  /* width: 26ch; */
   text-transform: capitalize;
-  font-size: 40px;
+  font-size: 2rem;
   font-weight: 700;
   color: #181736;
-  line-height: 56.4px;
   word-break: break-word;
   margin: 0.4em 0;
   max-width: 100%;
   margin-bottom: 0.2em;
-  @media only screen and (max-width: 1168px) {
-    max-width: 90%;
-    width: 22ch;
-  }
-  @media only screen and (max-width: 768px) {
-    font-size: 2.45rem;
-    line-height: 3rem;
-    max-width: 100%;
-  }
 `;
 const Row = styled.div`
   display: flex;

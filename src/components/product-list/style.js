@@ -35,13 +35,14 @@ export const ProductsHeader = styled.div`
 
 ////////routebar
 export const NavHeader = styled.div`
+  padding: 0.6rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 1.88rem;
-  min-height: 181px;
+  min-height: 12rem;
   // background: url("/images/home/banner/banner-3.png");
   background: ${(props) => props.theme.palette.bg.main}20;
   background-position: center;
@@ -51,7 +52,7 @@ export const NavHeader = styled.div`
   max-width: 100vw;
   text-overflow: ellipsis;
   h4 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #181736;
     font-weight: 700;
     word-break: break-word;
@@ -140,7 +141,7 @@ export const CategoryBar = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 1em 2em;
-  background: #DDA60A;
+  background: #dda60a;
   height: 5rem;
   p {
     color: ${(props) => props.theme.palette.colors.main};
