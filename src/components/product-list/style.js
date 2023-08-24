@@ -52,7 +52,6 @@ export const NavHeader = styled.div`
   text-overflow: ellipsis;
   h4 {
     font-size: 2rem;
-    max-width: 50%;
     color: #181736;
     font-weight: 700;
     word-break: break-word;
