@@ -219,7 +219,7 @@ const Header = () => {
               onMouseEnter={() => setShowDropDown(true)}
               onMouseLeave={() => setShowDropDown(false)}
             >
-              <Button variant="text" className="login-btn">
+              <Button variant="text" className="login-btn" style={{ color: "#ffffff" }}>
                 <AiOutlineUser />
                 <p className="userName">Hi {userDetails?.customerDto?.firstName}</p>
               </Button>
