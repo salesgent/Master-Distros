@@ -25,7 +25,6 @@ const header = keyframes`
 
 export const HeaderSection = styled.div`
   width: 100%;
-  background: black;
   padding: 0 1em;
   // display: flex;
   // place-items: center;
@@ -38,7 +37,11 @@ export const HeaderSection = styled.div`
   box-shadow: 1px 1px 3px #d1d1d1;
   position: ${(props) => (props.scroll ? "fixed" : "static")};
   animation-fill-mode: forwards;
-  background: white;
+  background-color: #000000;
+  background-image: url("/images/background.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
   padding: 1em;
   @media only screen and (max-width: 1400px) {
     padding: 0 1em;
@@ -96,13 +99,12 @@ export const IconsContainer = styled.div`
     cursor: pointer;
   }
   .icon-btn {
-    height: 56px;
-    width: 56px;
+    // height: 56px;
+    // width: 56px;
     margin-left: 5px;
     color: #181736;
     svg {
-      width: 25px;
-      height: 25px;
+      font-size: 2rem;
     }
   }
   .login-btn {

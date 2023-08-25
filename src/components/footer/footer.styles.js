@@ -8,13 +8,17 @@ import { BodyText } from "../../utilities/theme/components";
 
 export const FooterSection = styled.section`
   width: 100%;
-  background: #2e2929;
   display: flex;
   display: grid;
   place-items: center;
-  height: 37.94;
   overflow: hidden;
   padding: 0 1em;
+  // background: #2e2929;
+  background-color: #000000;
+  background-image: url("/images/background.png");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
 `;
 
 export const FooterContainer = styled.div`

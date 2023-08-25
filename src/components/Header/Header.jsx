@@ -28,6 +28,8 @@ import { toggleOpenDrawer } from "../../store/cart";
 import AccountDropDown from "./DropDown/AccountDropDown";
 
 import { setAlert } from "../../AsyncFunctions/alert";
+import { TfiWallet } from "react-icons/tfi";
+import { FiTruck } from "react-icons/fi";
 
 const data = [
   {
@@ -66,7 +68,7 @@ const Header = () => {
     <HeaderSection className="header">
       <HeaderContainer>
         <SmIcons>
-          <FiMenu onClick={() => dispatch(setOpenDrawer(true))} />
+          <FiMenu onClick={() => dispatch(setOpenDrawer(true))} style={{ color: "#ffffff" }} />
           {/* ///////////mobile drawer//// */}
           {width < 1400 && (
             <Drawer className="header" open={openDrawer} onClose={() => dispatch(setOpenDrawer(false))}>
@@ -83,7 +85,7 @@ const Header = () => {
               alt="logo"
               layout="responsive"
               width={280}
-              height={74}
+              height={140}
               objectFit="contain"
             />
           </Link>
@@ -127,8 +129,10 @@ const Header = () => {
           <Link href="#">
             <a>
               <Stack spacing={1} direction="row" alignItems="center">
-                <Image src="/images/header/deliver.png" alt="login" width={51} height={33} />
-                <Typography variant="body2" sx={{ fontSize: "11px", color: "#595959" }}>
+                <IconButton className="icon-btn">
+                  <FiTruck style={{ color: "#ffffff", fontSize: "2rem" }} />
+                </IconButton>
+                <Typography variant="body2" sx={{ fontSize: "11px", color: "#ffffff" }}>
                   FREE DELIVERY
                   <br /> FROM $ 1000
                 </Typography>
@@ -138,8 +142,10 @@ const Header = () => {
           <Link href="#">
             <a>
               <Stack spacing={1} direction="row" alignItems="center">
-                <Image src="/images/header/wallet.png" alt="login" width={37} height={38} />
-                <Typography variant="body2" sx={{ fontSize: "11px", color: "#595959" }}>
+                <IconButton className="icon-btn">
+                  <TfiWallet style={{ color: "#ffffff", fontSize: "2rem" }} />
+                </IconButton>
+                <Typography variant="body2" sx={{ fontSize: "11px", color: "#ffffff" }}>
                   MONEY BACK
                   <br />
                   GUARANTEE
@@ -222,7 +228,7 @@ const Header = () => {
           ) : (
             <Link href="/account/login">
               <IconButton className="icon-btn">
-                <AiOutlineUser />
+                <AiOutlineUser style={{ color: "#ffffff" }} />
               </IconButton>
             </Link>
           )}
