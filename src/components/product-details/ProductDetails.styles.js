@@ -81,6 +81,20 @@ export const ProductDetailedName = styled.h3`
   max-width: 100%;
   margin-bottom: 0.2em;
 `;
+
+export const ProductShortDescriptions = styled.div`
+  word-break: break-word;
+  font-weight: 300;
+  margin: 1rem 0;
+  width: 100%;
+  /* max-height: 7rem; */
+  //overflow: hidden;
+  text-overflow: ellipsis;
+  ul {
+    padding-left: 1em;
+  }
+`;
+
 const Row = styled.div`
   display: flex;
   flex-direction: row;

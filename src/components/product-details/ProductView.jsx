@@ -11,6 +11,7 @@ import {
   ProductDetailsBox,
   ProductDetailsTitle,
   ProductImageContainer,
+  ProductShortDescriptions,
   ProductView,
   QuantityBox,
   SkuTable,
@@ -77,9 +78,9 @@ const ProductViewContainer = ({ productDetails, loading, id }) => {
       : ["/images/products/logo.png"];
 
   // //short description
-  // const shortDescription = () => {
-  //   return { __html: product?.masterProductDetails?.shortDescription };
-  // };
+  const shortDescription = () => {
+    return { __html: product?.masterProductDetails?.shortDescription };
+  };
 
   ///////functions
   const handleIncremenDecrement = (type) => {
@@ -142,10 +143,10 @@ const ProductViewContainer = ({ productDetails, loading, id }) => {
       </ProductImageContainer>
       <ProductDetailsBox>
         <ProductDetailedName>{product?.masterProductDetails?.productName}</ProductDetailedName>
+        <ProductShortDescriptions dangerouslySetInnerHTML={shortDescription()} />
         <Box
           sx={{
-            mt: 3,
-            pb: 1,
+            mt: 1,
             mb: 1,
             width: "100%",
             display: "flex",
@@ -154,43 +155,45 @@ const ProductViewContainer = ({ productDetails, loading, id }) => {
             borderBottom: "1px solid rgba(0, 0, 0, 0.6)",
           }}
         >
-          {product?.masterProductDetails?.standardPriceWithoutDiscount !==
-            product?.masterProductDetails?.standardPrice && (
-            <Typography
-              variant="h4"
-              fontWeight={400}
-              sx={{ fontSize: "35px", color: "#7E7E7E", mb: -1 }}
-              fontFamily="Gothic A1"
-            >
-              <del>${product?.masterProductDetails.standardPriceWithoutDiscount.toFixed(2)}</del>
-            </Typography>
-          )}
           {userDetails && (
-            <Stack direction="row" alignItems="center">
-              <Typography
-                variant="h3"
-                fontWeight={900}
-                fontFamily="Gothic A1"
-                sx={{ fontSize: "54px", color: "#181736" }}
-              >
-                {product?.masterProductDetails?.standardPriceWithoutDiscount === null
-                  ? ""
-                  : `$${product?.masterProductDetails?.standardPrice.toFixed(2)}`}
-              </Typography>
-              <Typography
-                variant="h3"
-                ml={2}
-                mb={1}
-                fontWeight={700}
-                fontFamily="Gothic A1"
-                sx={{ fontSize: "22px", color: "#44B71C" }}
-              >
-                {/* ${product?.masterProductDetails.standardPrice.toFixed(2)} */}
-                {product?.masterProductDetails?.availableQuantity > 0 && !(product?.body?.content?.length > 0)
-                  ? "In Stock"
-                  : ""}
-              </Typography>
-            </Stack>
+            <>
+              {product?.masterProductDetails?.standardPriceWithoutDiscount !==
+                product?.masterProductDetails?.standardPrice && (
+                <Typography
+                  variant="h4"
+                  fontWeight={400}
+                  sx={{ fontSize: "35px", color: "#7E7E7E", mb: -1 }}
+                  fontFamily="Gothic A1"
+                >
+                  <del>${product?.masterProductDetails.standardPriceWithoutDiscount.toFixed(2)}</del>
+                </Typography>
+              )}
+              <Stack direction="row" alignItems="center">
+                <Typography
+                  variant="h3"
+                  fontWeight={900}
+                  fontFamily="Gothic A1"
+                  sx={{ fontSize: "54px", color: "#181736" }}
+                >
+                  {product?.masterProductDetails?.standardPriceWithoutDiscount === null
+                    ? ""
+                    : `$${product?.masterProductDetails?.standardPrice.toFixed(2)}`}
+                </Typography>
+                <Typography
+                  variant="h3"
+                  ml={2}
+                  mb={1}
+                  fontWeight={700}
+                  fontFamily="Gothic A1"
+                  sx={{ fontSize: "22px", color: "#44B71C" }}
+                >
+                  {/* ${product?.masterProductDetails.standardPrice.toFixed(2)} */}
+                  {product?.masterProductDetails?.availableQuantity > 0 && !(product?.body?.content?.length > 0)
+                    ? "In Stock"
+                    : ""}
+                </Typography>
+              </Stack>
+            </>
           )}
         </Box>
         <Stack
