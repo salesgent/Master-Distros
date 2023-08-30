@@ -1,6 +1,6 @@
 import { CheckoutPageComponent } from "@salesgenterp/ui-components";
-import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LoginFunction } from "../src/AsyncFunctions/Auth";
 import {
@@ -52,14 +52,15 @@ const CheckoutPage = () => {
   const selectedStore = useSelector((state) => state.checkout.SelectedStore);
   const showShipping = useSelector((state) => state.checkout.showShipping);
   const storeCr = useSelector((state) => state.checkout.storeCredits);
-  const discountCoupons = useSelector((state) => state.checkout?.discountCoupons);
+  const discountCoupons = useSelector((state) => state.checkout?.discountCoupons) || [];
+  let discountTotal = 0;
+  discountCoupons?.forEach((element) => {
+    discountTotal = discountTotal + element.amount;
+  });
+
   const mounted = useRef(false);
   const taxPercentage = 0;
   const storePayment = storeCr ? { name: "store credits" } : null;
-  let discountTotal = 0;
-  // discountCoupons?.forEach((element) => {
-  //   discountTotal = discountTotal + element.amount;
-  // });
   useEffect(() => {
     if (tokens?.token && !mounted.current) {
       fetchPaymentOptions(dispatch, tokens?.token).then((data) => {
@@ -154,12 +155,12 @@ const CheckoutPage = () => {
     if (card) {
       ecommerceCustomPaymentDto = {
         cardNumber: card?.cardNumber,
-        // cardName: card?.cardName,
+        cardName: card?.firstName + card?.firstName ? " " : "" + card?.lastName,
         expirationMonth: card?.expirationMonth,
         expirationYear: card?.expirationYear,
         cvv: card?.cvv,
-        firstName: card?.firstName,
-        lastName: card?.lastName,
+        // firstName: card?.firstName,
+        // lastName: card?.lastName,
         address: card?.address,
         city: card?.city,
         stateId: card?.stateId,
@@ -186,14 +187,16 @@ const CheckoutPage = () => {
         {
           amount: cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0) - storeCr?.amount - discountTotal,
           paymentModeId: selectedPayment?.id,
+          // ...authorizeCustomerCardData,
         },
       ];
     } else {
       orderPaymentList = [
         {
-          amount: cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0),
+          amount: cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0) - discountTotal,
           paymentModeId: selectedPayment?.id,
           customerOrderCard: ecommerceCustomPaymentDto,
+          // ...authorizeCustomerCardData,
         },
       ];
     }
@@ -204,7 +207,7 @@ const CheckoutPage = () => {
         orderDto,
         paymentDtoList,
         ecommerceCustomPaymentDto,
-        // discountCouponList: discountCoupons,
+        discountCouponList: discountCoupons,
       })(dispatch).then((data) => {
         if (data?.productOutOfStock) {
           setAlert("error", "There are few line items out of stock, please review them once.")(dispatch);
@@ -216,7 +219,7 @@ const CheckoutPage = () => {
       PostOrder(tokens?.token, {
         orderDto,
         paymentDtoList,
-        // discountCouponList: discountCoupons,
+        discountCouponList: discountCoupons,
       })(dispatch).then((data) => {
         if (data?.productOutOfStock) {
           setAlert("error", "There are few line items out of stock, please review them once.")(dispatch);
