@@ -16,16 +16,12 @@ const nextConfig = {
     DOMAIN_BASE_URL: process.env.DOMAIN_BASE_URL,
   },
   images: {
-    domains: [
-      "d3j5xyin142jiv.cloudfront.net",
-      "d1lcbafy93xv06.cloudfront.net",
-      "dnfbqhh6e48qy.cloudfront.net",
-      "d2qy7jf8q4hhsv.cloudfront.net",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
     ],
-    experimental: {
-      scrollRestoration: true,
-    },
-    disableStaticImages: false,
   },
 };
 
