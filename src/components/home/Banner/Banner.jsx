@@ -49,7 +49,7 @@ const Banner = ({ bannerAfterSecondary }) => {
 
   return (
     <BannerContainer>
-      <Grid container spacing={1} mt={2.5}>
+      <Grid container spacing={1}>
         {bannerAfterSecondary?.sliderImageList?.map((v, i) => (
           <Grid item lg={4} md={6} sm={12} xs={12} key={i}>
             <Box

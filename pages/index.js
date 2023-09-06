@@ -29,7 +29,9 @@ export default function Home({ primarySlider, secondarySlider, bannerAfterSecond
       <main>
         <LandingCarousel data={primarySlider} />
         {/* <Features /> */}
-        <LandingCarousel data={secondarySlider} slidesPerView={isMobile ? 2 : 5} spaceBetween={10} />
+        <div style={{ margin: "0.6rem 0" }}>
+          <LandingCarousel data={secondarySlider} slidesPerView={isMobile ? 2 : 5} spaceBetween={10} />
+        </div>
         {/* <LandingGallery secondarySlider={secondarySlider} /> */}
         {/* <VapeCategory /> */}
         <Tags bannerAfterSecondary={bannerAfterSecondary} />
