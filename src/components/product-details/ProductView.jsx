@@ -158,40 +158,44 @@ const ProductViewContainer = ({ productDetails, loading, id }) => {
           {userDetails && (
             <>
               {product?.masterProductDetails?.standardPriceWithoutDiscount !==
-                product?.masterProductDetails?.standardPrice && (
-                <Typography
-                  variant="h4"
-                  fontWeight={400}
-                  sx={{ fontSize: "35px", color: "#7E7E7E", mb: -1 }}
-                  fontFamily="Gothic A1"
-                >
-                  <del>${product?.masterProductDetails.standardPriceWithoutDiscount.toFixed(2)}</del>
-                </Typography>
-              )}
+                product?.masterProductDetails?.standardPrice &&
+                !(product?.body?.content?.length > 0) && (
+                  <Typography
+                    variant="h4"
+                    fontWeight={400}
+                    sx={{ fontSize: "35px", color: "#7E7E7E", mb: -1 }}
+                    fontFamily="Gothic A1"
+                  >
+                    <del>${product?.masterProductDetails.standardPriceWithoutDiscount.toFixed(2)}</del>
+                  </Typography>
+                )}
               <Stack direction="row" alignItems="center">
-                <Typography
-                  variant="h3"
-                  fontWeight={900}
-                  fontFamily="Gothic A1"
-                  sx={{ fontSize: "54px", color: "#181736" }}
-                >
-                  {product?.masterProductDetails?.standardPriceWithoutDiscount === null
-                    ? ""
-                    : `$${product?.masterProductDetails?.standardPrice.toFixed(2)}`}
-                </Typography>
-                <Typography
-                  variant="h3"
-                  ml={2}
-                  mb={1}
-                  fontWeight={700}
-                  fontFamily="Gothic A1"
-                  sx={{ fontSize: "22px", color: "#44B71C" }}
-                >
-                  {/* ${product?.masterProductDetails.standardPrice.toFixed(2)} */}
-                  {product?.masterProductDetails?.availableQuantity > 0 && !(product?.body?.content?.length > 0)
-                    ? "In Stock"
-                    : ""}
-                </Typography>
+                {!(product?.body?.content?.length > 0) && (
+                  <Typography
+                    variant="h3"
+                    fontWeight={900}
+                    fontFamily="Gothic A1"
+                    sx={{ fontSize: "54px", color: "#181736" }}
+                  >
+                    {product?.masterProductDetails?.standardPriceWithoutDiscount === null ? (
+                      ""
+                    ) : (
+                      <>${product?.masterProductDetails?.standardPrice.toFixed(2)}</>
+                    )}
+                  </Typography>
+                )}
+                {product?.masterProductDetails?.availableQuantity > 0 && !(product?.body?.content?.length > 0) && (
+                  <Typography
+                    variant="h3"
+                    ml={2}
+                    mb={1}
+                    fontWeight={700}
+                    fontFamily="Gothic A1"
+                    sx={{ fontSize: "22px", color: "#44B71C" }}
+                  >
+                    In Stock
+                  </Typography>
+                )}
               </Stack>
             </>
           )}
