@@ -121,8 +121,12 @@ const CommonProductCard = ({ product, onListPage, isNew }) => {
                   </ProductPrice>
                 ) : (
                   <ProductPrice small={onListPage}>
-                    <span>${product.standardPriceWithoutDiscount?.toFixed(2)}</span>
-                    <p>${product.standardPrice?.toFixed(2)}</p>
+                    {!product?.hasChildProduct && (
+                      <>
+                        <span>${product.standardPriceWithoutDiscount?.toFixed(2)}</span>
+                        <p>${product.standardPrice?.toFixed(2)}</p>
+                      </>
+                    )}
                   </ProductPrice>
                 )}
               </>
