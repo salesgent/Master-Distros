@@ -1,14 +1,8 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-} from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import styled from "styled-components";
 import React from "react";
 import VariantsCardRow from "./VariatnRow";
+import { orderBy } from "lodash";
 
 const variantsContainer = styled.div`
   width: 100%;
@@ -53,13 +47,7 @@ const TableBox = styled(Table)`
     padding: 6px;
   }
 `;
-const VariantsTable = ({
-  content,
-  productsList,
-  setProductsList,
-  reset,
-  headers,
-}) => {
+const VariantsTable = ({ content, productsList, setProductsList, reset, headers }) => {
   return (
     <TableContainer component={variantsContainer} sx={{ maxHeight: 255 }}>
       <TableBox aria-label="a dense table" stickyHeader>
@@ -85,7 +73,7 @@ const VariantsTable = ({
           </TableRow>
         </TableHead>
         <TableBody>
-          {content.map((item, i) => (
+          {orderBy(content, ["availableQuantity"], ["desc"])?.map((item, i) => (
             <VariantsCardRow
               reset={reset}
               productsList={productsList}
