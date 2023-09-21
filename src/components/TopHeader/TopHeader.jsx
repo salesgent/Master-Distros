@@ -81,14 +81,19 @@ const headerData1 = [
     name: "Pact Act form",
   },
   {
+    icon: <HiOutlineUsers className="icon" />,
+    link: "/account/register",
+    name: "Register",
+  },
+  {
     icon: <BsTelephone className="icon" />,
-    link: "#",
-    name: " +1 000-000-0000",
+    link: "tel:+4044910786",
+    name: " +1 404-491-0786",
   },
   {
     icon: <RiFileList3Line className="icon" />,
-    link: "#",
-    name: "Recently Viewed",
+    link: "mailto:cs@masterdistros.com",
+    name: "cs@masterdistros.com",
   },
 ];
 const headerData = [

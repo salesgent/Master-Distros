@@ -146,9 +146,9 @@ const Header = () => {
                   <TfiWallet style={{ color: "#ffffff", fontSize: "2rem" }} />
                 </IconButton>
                 <Typography variant="body2" sx={{ fontSize: "11px", color: "#ffffff" }}>
-                  MONEY BACK
+                  BEST CUSTOMER
                   <br />
-                  GUARANTEE
+                  SERVICE
                 </Typography>
               </Stack>
             </a>
