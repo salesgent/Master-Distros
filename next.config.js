@@ -16,6 +16,7 @@ const nextConfig = {
     DOMAIN_BASE_URL: process.env.DOMAIN_BASE_URL,
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",

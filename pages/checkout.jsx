@@ -25,8 +25,11 @@ import {
   setStoreCredits,
 } from "../src/store/checkout";
 import { setAlert } from "../src/AsyncFunctions/alert";
+import getConfig from "next/config";
 
 const CheckoutPage = () => {
+  const { publicRuntimeConfig } = getConfig();
+  const { API_BASE_URL } = publicRuntimeConfig;
   const dispatch = useDispatch();
   const router = useRouter();
   const [shippingOptions, setShippingOptions] = useState([]);
@@ -57,6 +60,11 @@ const CheckoutPage = () => {
   discountCoupons?.forEach((element) => {
     discountTotal = discountTotal + element.amount;
   });
+
+  const authorizeCustomerCardData = {
+    authorizeDotNetCustomerProfileId: selectedPayment?.authorizeDotNetCustomerProfileId,
+    authorizeDotNetCustomerPaymentProfileId: selectedPayment?.authorizeDotNetCustomerPaymentProfileId,
+  };
 
   const mounted = useRef(false);
   const taxPercentage = 0;
@@ -155,12 +163,12 @@ const CheckoutPage = () => {
     if (card) {
       ecommerceCustomPaymentDto = {
         cardNumber: card?.cardNumber,
-        cardName: card?.firstName + card?.firstName ? " " : "" + card?.lastName,
+        // cardName: card?.firstName + card?.firstName ? " " : "" + card?.lastName,
         expirationMonth: card?.expirationMonth,
         expirationYear: card?.expirationYear,
         cvv: card?.cvv,
-        // firstName: card?.firstName,
-        // lastName: card?.lastName,
+        firstName: card?.firstName,
+        lastName: card?.lastName,
         address: card?.address,
         city: card?.city,
         stateId: card?.stateId,
@@ -187,7 +195,7 @@ const CheckoutPage = () => {
         {
           amount: cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0) - storeCr?.amount - discountTotal,
           paymentModeId: selectedPayment?.id,
-          // ...authorizeCustomerCardData,
+          ...authorizeCustomerCardData,
         },
       ];
     } else {
@@ -196,7 +204,7 @@ const CheckoutPage = () => {
           amount: cartData?.totalCartPrice + tax + (shippingMethod?.amount || 0) - discountTotal,
           paymentModeId: selectedPayment?.id,
           customerOrderCard: ecommerceCustomPaymentDto,
-          // ...authorizeCustomerCardData,
+          ...authorizeCustomerCardData,
         },
       ];
     }
@@ -246,6 +254,9 @@ const CheckoutPage = () => {
       <CheckoutPageComponent
         currStep={activeStep}
         styles={styles}
+        apiEndPoint={API_BASE_URL}
+        token={tokens?.token}
+        authoriseDotNet={true}
         userName={userDetails?.customerDto?.firstName}
         handleBack={(step) => {
           if (activeStep > 0) {

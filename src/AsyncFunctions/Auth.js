@@ -155,7 +155,7 @@ export const register = (details) => async (dispatch) => {
     )(dispatch);
     return true;
   } catch (err) {
-    setAlert("error", "Unable to signup")(dispatch);
+    setAlert("error", err?.response?.data?.error?.details || "Unable to signup", { autoClose: false })(dispatch);
     dispatch(toggleLoading(false));
     return false;
   }
