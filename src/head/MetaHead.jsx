@@ -6,7 +6,7 @@ const CommonHead = () => {
   return (
     <Head>
       <title>Master Distros</title>
-      <meta name="description" content="leaf distro" />
+      <meta name="description" content="Master Distros" />
       <link rel="manifest" href="/favicon/manifest.json" />
       {/* favicons */}
       <link rel="icon" type="image/png" href="/favicon/favicon.webp" />

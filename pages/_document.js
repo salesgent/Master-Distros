@@ -35,7 +35,7 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en" dir="ltr">
         <Head>
-          <meta name="description" content="leaf distro" />
+          <meta name="description" content="Master Distros" />
           <link rel="manifest" href="/favicon/manifest.json" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
