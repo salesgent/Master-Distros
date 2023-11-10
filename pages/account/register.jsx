@@ -40,7 +40,7 @@ const RegisterPage = () => {
   const { data: state } = useDatafetcher(`/country/${countryChange || 1}/allState`, true);
   ////submit func
   const onSubmit = (data) => {
-    if (phoneNumber[0].length < 8) {
+    if (phoneNumber?.[0].length < 8) {
       setShowError(true);
     } else {
       // if (businessLicense.length < 1 || tobaccoLicense.length < 1 || drivingLicense.length < 1)
@@ -149,10 +149,11 @@ const RegisterPage = () => {
                   name="phone"
                   render={({ field }) => (
                     <TextField
-                      error={showError && phoneNumber[0].length < 10}
+                      // error={showError && phoneNumber[0].length < 10}
                       required={true}
                       label="Phone"
-                      type="tel"
+                      type="text"
+                      inputProps={{ minLength: 10 }}
                       {...field}
                       className={styles.inputBox}
                       fullWidth={true}
