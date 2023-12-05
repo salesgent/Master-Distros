@@ -86,9 +86,12 @@ export const PostOrder = (token, details) => async (dispatch) => {
     const getStoreIdsData = localStorage.getItem("storeIds");
     const storeId = getStoreIdsData?.storeId || 2;
     const data = await axios.post(`${DOMAIN_BASE_URL}/ecommerce/order?storeId=${storeId}`, orderDetails, {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: `application/json, text/plain`,
+      },
     });
-    setAlert("success", "Order Placed successfully")(dispatch);
+    data?.data?.result?.orderDto.id && setAlert("success", "Order Placed successfully")(dispatch);
     getUserDetails(token)(dispatch);
     fetchCartData(token)(dispatch);
     return data?.data?.result;
@@ -100,33 +103,3 @@ export const PostOrder = (token, details) => async (dispatch) => {
     return false;
   }
 };
-////////////////////////////////////////////////////////////////////////////////////////////////
-// orderDto: {customerStoreId: 4, storeId: 1, salesRepresentativeId: 1, customerId: null,…}
-// customerBillingAddressId: 4
-// customerId: null
-// customerNotes: ""
-// customerShippingAddressId: 4
-// customerStoreId: 4
-// discount: 0
-// internalNotes: ""
-// invoiceTimestamp: null
-// paymentTermsId: 1
-// preferredPaymentMethodId: 9
-// preferredPaymentModeId: 9
-// preferredShippingModeId: 4
-// salesRepresentativeId: 1
-// shipTimestamp: null
-// shippingAmount: 0
-// shippingNotes: ""
-// status: "Pro Forma"
-// storeId: 1
-// subTotal: 1393
-// taxAmount: 83.58
-// totalAmount: 1476.58
-// totalQuantity: 7
-// paymentDtoList: [{paymentModeId: 9, amount: 1476.58, transactionId: ""}]
-// 0: {paymentModeId: 9, amount: 1476.58, transactionId: ""}
-// amount: 1476.58
-// paymentModeId: 9
-// transactionId: ""
-//////////////////////////////////////////

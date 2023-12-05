@@ -89,6 +89,7 @@ export const register = (details) => async (dispatch) => {
   dispatch(toggleLoading(true));
   const {
     email,
+    password,
     firstName,
     lastName,
     phone,
@@ -101,18 +102,22 @@ export const register = (details) => async (dispatch) => {
     websiteReference,
     taxId,
     tobaccoId,
+    feinNumber,
+    voidCheckNumber,
     drivingLicenseNumber,
     company,
     dbaName,
     referBySalesRep,
     businessLicense,
     tobaccoLicense,
+    feinLicense,
     drivingLicense,
+    voidCheck,
   } = details;
 
   const userDetails = {
-    customerStoreDto: {
-      customerStoreAddress: {
+    customerStoreAddressList: [
+      {
         address1,
         address2,
         city,
@@ -120,8 +125,7 @@ export const register = (details) => async (dispatch) => {
         stateId: state,
         zip,
       },
-      storeName: company,
-    },
+    ],
     firstName,
     lastName,
     email,
@@ -131,21 +135,26 @@ export const register = (details) => async (dispatch) => {
     primaryBusinessName: "vape store",
     taxId,
     tobaccoId,
+    feinNumber,
     drivingLicenseNumber,
     referBySalesRep,
     websiteReference,
+    voidCheckNumber,
   };
 
   let bodyFormData = new FormData();
   businessLicense?.[0] && bodyFormData.append("businessLicense", businessLicense?.[0], businessLicense?.[0]?.name);
   tobaccoLicense?.[0] && bodyFormData.append("tobaccoLicense", tobaccoLicense?.[0], tobaccoLicense?.[0]?.name);
+  feinLicense?.[0] && bodyFormData.append("feinLicense", feinLicense?.[0], feinLicense?.[0]?.name);
   drivingLicense?.[0] && bodyFormData.append("drivingLicense", drivingLicense?.[0], drivingLicense?.[0]?.name);
+  voidCheck?.[0] && bodyFormData.append("voidCheck", voidCheck?.[0], voidCheck?.[0]?.name);
   bodyFormData.append("customerObj", JSON.stringify(userDetails));
 
   try {
     await axios.post(`${DOMAIN_BASE_URL}/ecommerce/customer/withDocuments`, bodyFormData, {
       headers: {
         "Content-Type": "multipart/form-data",
+        Accept: `application/json, text/plain`,
       },
     });
     dispatch(toggleLoading(false));
