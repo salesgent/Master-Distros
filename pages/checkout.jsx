@@ -49,7 +49,6 @@ const CheckoutPage = () => {
   return (
     <>
       <CheckoutPageComponent
-        currStep={activeStep}
         apiEndPoint={DOMAIN_BASE_URL}
         token={tokens?.token}
         authoriseDotNet={true}
