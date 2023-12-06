@@ -13,7 +13,7 @@ const TagsContainer = styled.section`
   flex-direction: column;
   width: 100%;
 `;
-const Tags = ({ bannerAfterSecondary }) => {
+const Tags = () => {
   const { data, error } = useDatafetcher(`/home/productTagList`, true);
 
   const [showBanners, setShowBanners] = useState(false);
@@ -29,12 +29,12 @@ const Tags = ({ bannerAfterSecondary }) => {
         data.map((products, i) => (
           <div key={i}>
             <ProductSlider data={products} />
-            {showBanners ||
+            {/* {showBanners ||
               (i === 0 && (
                 <>
                   <Banner bannerAfterSecondary={bannerAfterSecondary} />
                 </>
-              ))}
+              ))} */}
           </div>
         ))}
       {/* <BrandCarousel /> */}

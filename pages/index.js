@@ -14,11 +14,12 @@ import LandingCarousel from "../src/components/home/ladingCarousel/landingCarous
 import VapeCategory from "../src/components/home/productCategory/VapeCategory";
 import axios from "axios";
 import Customers from "../src/components/home/customers/Customers";
+import { HomeBanner } from "@salesgenterp/ui-components";
 
 const Tags = dynamic(() => import("../src/components/home/TagsProducts/productsSlider/Tags"));
 const Newsteller = dynamic(() => import("../src/components/home/Newsteller/Newsteller"), { ssr: false });
 
-export default function Home({ primarySlider, secondarySlider, bannerAfterSecondary }) {
+export default function Home({}) {
   const isMobile = useMediaQuery("(max-width:640px)");
 
   return (
@@ -27,35 +28,22 @@ export default function Home({ primarySlider, secondarySlider, bannerAfterSecond
         <title>Master Distros</title>
       </Head>
       <main>
-        <LandingCarousel data={primarySlider} />
-        {/* <Features /> */}
-        <div style={{ margin: "0.6rem 0" }}>
-          <LandingCarousel data={secondarySlider} slidesPerView={isMobile ? 2 : 5} spaceBetween={10} />
+        <div
+        // style={{ maxWidth: 1600, margin: "1rem auto" }}
+        >
+          <HomeBanner apiEndPoint={process.env.DOMAIN_BASE_URL} />
         </div>
+        {/* <LandingCarousel data={primarySlider} /> */}
+        {/* <Features /> */}
+        {/* <div style={{ margin: "0.6rem 0" }}>
+          <LandingCarousel data={secondarySlider} slidesPerView={isMobile ? 2 : 5} spaceBetween={10} />
+        </div> */}
         {/* <LandingGallery secondarySlider={secondarySlider} /> */}
         {/* <VapeCategory /> */}
-        <Tags bannerAfterSecondary={bannerAfterSecondary} />
+        <Tags />
         <Customers />
         <Newsteller />
       </main>
     </div>
   );
-}
-
-export async function getServerSideProps(context) {
-  const url1 = `${process.env.DOMAIN_BASE_URL}/home/sliderImages?sliderType=primary&businessTypeId=1`;
-  const url2 = `${process.env.DOMAIN_BASE_URL}/home/sliderImages?sliderType=secondary&businessTypeId=1`;
-  const url3 = `${process.env.DOMAIN_BASE_URL}/home/sliderImages?sliderType=banner-after-secondary-slider&businessTypeId=1`;
-
-  const { data: data1 } = await axios.get(url1);
-  const { data: data2 } = await axios.get(url2);
-  const { data: data3 } = await axios.get(url3);
-
-  return {
-    props: {
-      primarySlider: data1?.result || [],
-      secondarySlider: data2?.result || [],
-      bannerAfterSecondary: data3?.result || [],
-    },
-  };
 }
