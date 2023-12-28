@@ -108,7 +108,6 @@ const ProductViewContainer = ({ productDetails, loading, id }) => {
         token
       )(dispatch).then(() => {
         setReset((reset) => !reset);
-        setProductsList([]);
       });
     } else {
       setAlert("warn", "Please ,add some quantity to continue")(dispatch);
