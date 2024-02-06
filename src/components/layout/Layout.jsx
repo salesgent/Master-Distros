@@ -9,7 +9,7 @@ import { toggleOpenDrawer } from "../../store/cart";
 import useWindowSize from "../../utilities/hooks/useWindowSize";
 import CartDrawerStack from "../cartDrawer/CartDrawer";
 import Footer from "../footer/footer";
-
+import { setToken } from "../../store/Auth";
 
 const Header = dynamic(() => import("../Header/Header"), { ssr: false });
 import Navigation from "../Navigation/Navigation";
