@@ -56,7 +56,6 @@ const Layout = ({ children }) => {
         <CartDrawerStack />
       </Drawer>
       {children}
-
       <Footer />
     </Stack>
   );
