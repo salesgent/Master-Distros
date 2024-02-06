@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { AccountDetails } from "@salesgenterp/ui-components";
 import getConfig from "next/config";
 import { useRouter } from "next/router";
+import "react-credit-cards/es/styles-compiled.css";
 
 const Account = () => {
   const router = useRouter();
@@ -47,6 +48,7 @@ const Account = () => {
         <AccountDetails
           apiEndPoint={DOMAIN_BASE_URL}
           token={token}
+          payInvoiceFromDashboard={true}
           primaryColor={colors.primaryColor}
           secondaryColor={colors.secondaryColor}
           backgroundColor={colors.backgroundColor}
