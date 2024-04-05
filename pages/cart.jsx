@@ -56,31 +56,10 @@ const CartDrawerStack = () => {
   const loading = useSelector((state) => state.cart.isLoading);
 
   ///////update cart qt
-  const updateCart = (type, item) => {
-    const { quantity, availableQuantity, minQuantityToSale } = item;
-    if (type === "increment") {
-      if (quantity >= availableQuantity) {
-        setAlert("warn", `only ${availableQuantity} is available`)(dispatch);
-      } else {
-        updateCartQuantity(
-          [{ ...item, quantity: quantity + 1 }],
-          token
-        )(dispatch);
-      }
-    } else {
-      if (quantity <= minQuantityToSale) {
-        setAlert(
-          "warn",
-          `you need to buy atleast ${minQuantityToSale}`
-        )(dispatch);
-      } else {
-        updateCartQuantity(
-          [{ ...item, quantity: quantity - 1 }],
-          token
-        )(dispatch);
-      }
-    }
+  const updateCart = (item) => {
+    updateCartQuantity([{ ...item }], token)(dispatch);
   };
+
   let styles = {
     imgSize: {
       width: "80px",
@@ -132,7 +111,7 @@ const CartDrawerStack = () => {
           deleteProductFromCart(product, token)(dispatch);
         }}
         retail={false}
-        handleIncrementDecrement={(type, product) => updateCart(type, product)}
+        handleIncrementDecrement={(product) => updateCart(product)}
         imgnotfoundUrl="/images/products/logo.png"
         clickRedirect={(link) => router.push(link)}
       />
