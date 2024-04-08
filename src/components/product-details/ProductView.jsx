@@ -251,7 +251,7 @@ const ProductViewContainer = ({ productDetails, loading, id }) => {
                       if (!e.target.value) setQuantity(parseInt(0));
                     }}
                     onChange={(e) => {
-                      if (e.target.value <= item?.availableQuantity && e.target.value >= 0)
+                      if (e.target.value <= product?.masterProductDetails?.availableQuantity && e.target.value >= 0)
                         setQuantity(parseInt(e.target.value));
                     }}
                   />
